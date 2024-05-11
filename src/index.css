@@ -106,10 +106,15 @@
   font-style: italic;
 }
 
+:focus {
+  border: none;
+  outline: 0 !important;
+}
 
 body {
   background-color: #efefef;
   font-family: "Poppins", sans-serif;
+  outline: none;
 }
 
 nav {
@@ -171,4 +176,14 @@ nav {
 .card-list li {
   padding: 0.2rem 0rem;
   list-style-type: none;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #000;
+  background-color: rgb(233, 233, 233);
 }
