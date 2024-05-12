@@ -111,29 +111,96 @@
   outline: 0 !important;
 }
 
+
+/* Theme classes start here */
+
+:root {
+  --body_background: #f3f3f3;
+  --header_background: #fff;
+  --shadow-color: #ccc;
+  --body_color: #212121;
+  --btn-background: #212121;
+}
+
+[data-theme="dark"] {
+  --body_background: #414651;
+  --header_background: #ccc;
+  --shadow-color: rgb(50, 48, 48);
+  --body_color: #f3f3f3;
+  --btn-background: #f3f3f3;
+}
+
+[data-theme="light"] {
+  --body_background: #f3f3f3;
+  --header_background: #fff;
+  --shadow-color: #ccc;
+  --body_color: #212121;
+  --btn-background: #212121;
+}
+
+/* Theme class ends here */
+
 body {
-  background-color: #efefef;
+  background-color: var(--body_background);
   font-family: "Poppins", sans-serif;
   outline: none;
+  color: var(--body_color);
 }
 
 nav {
-  background-color: #fff;
+  background-color: var(--header_background);
   margin: 2rem 0 2rem 0;
   height: 7rem;
-  box-shadow: 0px 5px 10px 0px #ccc;
-  border-top: 1px solid #ccc;
+  box-shadow: 0px 5px 10px 0px var(--shadow-color);
+  border-top: 1px solid var(--shadow-color);
 
   .title {
     font-size: 30px;
   }
 }
 
+.btn {
+  background-color: var(--btn-background);
+  color: var(--shadow-color);
+}
+
+.toggle_container {
+  cursor: pointer;
+
+  .light_mode {
+    color: #4b4b4b;
+  }
+}
+
+/** Card Component */
+.card {
+  width: 18rem;
+  margin: 1rem;
+  padding: 0px;
+  box-shadow: 0px 0px 15px 10px var(--shadow-color);
+  display: flex;
+  height: 22rem;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/** Country Detail */
+
+.country_list {
+  background: var(--body_background);
+  color: var(--body_color);
+  border: 1px solid var(--shadow-color);
+  top: -2px;
+  border-radius: 5px;
+  position: relative;
+  margin: 0.5rem;
+}
+
 /** Search Component **/
 
 .search {
   position: relative;
-  color: #ccc;
+  color: var(--shadow-color);
   font-size: 20px;
   font-weight: 100;
   display: inline;
@@ -144,7 +211,7 @@ nav {
     background: #fcfcfc;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 5px 10px #ccc;
+    box-shadow: 0 5px 10px var(--shadow-color);
     text-indent: 32px;
     font-size: 15px;
 

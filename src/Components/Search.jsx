@@ -5,10 +5,11 @@ import Card from "./Card";
 import Filter from "./Filter";
 import Table from "./Table";
 
+// Search component to perform the search result based on country capital
 const Search = () => {
   const [q, setQ] = useState("");
   const [toggle, setToggle] = useState(true);
-  const [searchParam] = useState(["altSpellings", "name", "numericCode"]);
+  const [searchParam] = useState(["capital", "name", "numericCode"]);
   const [filterParam, setFilterParam] = useState(["All"]);
 
   const [error, setError] = useState(null);
@@ -63,7 +64,8 @@ const Search = () => {
       <>
         <div className="search-wrapper">
           <div className="row">
-            <div className="col-4">
+            {/* Search feature */}
+            <div className="col-lg-4 col-sm-12">
               <div className="search">
                 <span className="fa fa-search"></span>
                 <input
@@ -71,17 +73,20 @@ const Search = () => {
                   type="search"
                   name="search-form"
                   value={q}
-                  placeholder="Search for a country"
+                  placeholder="Search for a country capital"
                   aria-label="Search"
                   onChange={(e) => setQ(e.target.value)}
                 />
               </div>
             </div>
 
-            <div className="col-2 offset-4 justify-content-center d-flex">
+            {/* filter by region feature */}
+            <div className="col-lg-2 col-sm-12 mt-3 mt-lg-0 offset-lg-4 justify-content-center">
               <Filter handle={setFilterParam} />
             </div>
-            <div className="col-2 offset-0 p-1 justify-content-left d-flex">
+
+            {/* Card and Table view switcher */}
+            <div className="col-lg-2 col-sm-12 offset-lg-0 mt-3 mt-lg-2 justify-content-left d-flex">
               <div style={{ display: "inline-block" }}>Table</div>
               <div
                 style={{
@@ -111,15 +116,18 @@ const Search = () => {
             </div>
           </div>
         </div>
+
+        {/* card view */}
         {toggle ? (
           <div className="row justify-content-left d-flex">
-            {search(data).map((country) => (
+            {search(data).map((country, i) => (
               <>
-                <Card data={country} key={country.name.common} />
+                <Card data={country} key={country.name.common + i} />
               </>
             ))}
           </div>
         ) : (
+          // table view
           <div className="table-responsive">
             <table className="table" style={{ marginTop: "2rem" }}>
               <tr

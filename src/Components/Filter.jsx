@@ -1,4 +1,5 @@
 const Filter = ({ handle }) => {
+  // filter component to select the regions
   return (
     <div>
       <div className="select">

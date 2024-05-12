@@ -1,22 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Card view display with flag and country details
 const Card = ({ data }) => {
   return (
-    <div
-      className="card col-3"
-      style={{
-        width: "18rem",
-        margin: "1rem",
-        padding: "0px",
-        boxShadow: "0px 0px 15px 10px #ccc",
-        display: "flex",
-        height: "22rem",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-      }}
-      key={data?.name.common}
-    >
+    <div className="card col-3 card">
       <Link
         className="link"
         to={{
@@ -32,6 +20,7 @@ const Card = ({ data }) => {
           alt={data.name}
           style={{ position: "absolute", top: "0px" }}
         ></img>
+
         <div>
           <div
             className="card-content"

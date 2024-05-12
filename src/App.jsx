@@ -1,10 +1,9 @@
-import Card from "./Components/Card";
-import Header from "./Components/Header";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListPage from "./Pages/ListPage";
 import CountryDetail from "./Pages/CountryDetail";
 import Layout from "./Pages/Layout";
+import React from "react";
 
 const App = () => {
   return (

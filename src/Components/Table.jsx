@@ -7,9 +7,7 @@ const Table = ({ data }) => {
     <>
       <tr
         key={data.name.common}
-        onClick={() =>
-          navigate(`detail?name=${data?.name.common}, { replace: true }`)
-        }
+        onClick={() => navigate(`detail?name=${data?.name.common}`)}
         style={{
           height: "3rem",
           borderBottom: "1px solid #ccc",
@@ -33,17 +31,14 @@ const Table = ({ data }) => {
           {Object.keys(data?.currencies || {}).map((keys, val) => {
             return (
               <>
-                <span
-                  className="badge badge-secondary"
-                  style={{ fontWeight: "400" }}
-                >
+                <span className="badge badge-secondary fw-bolder">
                   {data?.currencies[keys].symbol + keys}
                 </span>
                 <span
+                  className="fw-light"
                   style={{
                     backgroundColor: "transparent",
                     paddingRight: "0px",
-                    fontWeight: "100",
                   }}
                 >
                   &nbsp;
